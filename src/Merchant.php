@@ -286,7 +286,7 @@ class Merchant extends Component
      */
     public function processResult($data)
     {
-        if (null !== $this->systemIPs && !$this->checkIp(\Yii::$app->request->getUserIP())) {
+        if (null !== $this->systemIPs && !$this->checkIp(\Yii::$app->request->userIP)) {
             throw new ForbiddenHttpException("Not allowed IP address");
         }
 
